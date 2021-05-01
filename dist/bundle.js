@@ -45,7 +45,7 @@ eval("\n\n__webpack_require__(/*! core-js/es6 */ \"../node_modules/core-js/es6/i
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_styles_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/styles.scss */ \"./styles/styles.scss\");\n/* harmony import */ var _styles_header_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles/header.scss */ \"./styles/header.scss\");\n/* harmony import */ var _styles_step_1_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styles/step-1.scss */ \"./styles/step-1.scss\");\n/* harmony import */ var _styles_game_field_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../styles/game-field.scss */ \"./styles/game-field.scss\");\n/* harmony import */ var _styles_rules_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../styles/rules.scss */ \"./styles/rules.scss\");\n\n\n\n // import '../styles/modal.scss';\n\n // Перенос изображений\n\n__webpack_require__(\"./images sync recursive \\\\.(png|jpg|svg|gif)$\");\n\n//# sourceURL=webpack:///./js/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_styles_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/styles.scss */ \"./styles/styles.scss\");\n/* harmony import */ var _styles_header_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles/header.scss */ \"./styles/header.scss\");\n/* harmony import */ var _styles_step_1_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styles/step-1.scss */ \"./styles/step-1.scss\");\n/* harmony import */ var _styles_game_field_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../styles/game-field.scss */ \"./styles/game-field.scss\");\n/* harmony import */ var _styles_modal_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../styles/modal.scss */ \"./styles/modal.scss\");\n/* harmony import */ var _styles_rules_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../styles/rules.scss */ \"./styles/rules.scss\");\n\n\n\n\n\n // Перенос изображений\n\n__webpack_require__(\"./images sync recursive \\\\.(png|jpg|svg|gif)$\");\n\n//# sourceURL=webpack:///./js/index.js?");
 
 /***/ }),
 
@@ -3982,6 +3982,21 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 
 /***/ }),
 
+/***/ "./images/modal.svg":
+/*!**************************!*\
+  !*** ./images/modal.svg ***!
+  \**************************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_exports__, __webpack_require__.r, __webpack_require__.p, __webpack_require__.* */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"images/modal.svg\");\n\n//# sourceURL=webpack:///./images/modal.svg?");
+
+/***/ }),
+
 /***/ "./images/paper-big.svg":
 /*!******************************!*\
   !*** ./images/paper-big.svg ***!
@@ -4235,6 +4250,20 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 
 /***/ }),
 
+/***/ "./styles/modal.scss":
+/*!***************************!*\
+  !*** ./styles/modal.scss ***!
+  \***************************/
+/*! namespace exports */
+/*! exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_require__.r, __webpack_exports__, __webpack_require__.* */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack:///./styles/modal.scss?");
+
+/***/ }),
+
 /***/ "./styles/rules.scss":
 /*!***************************!*\
   !*** ./styles/rules.scss ***!
@@ -4299,7 +4328,7 @@ eval("/**\n * Copyright (c) 2014-present, Facebook, Inc.\n *\n * This source cod
 /*! runtime requirements: module, __webpack_require__.o, __webpack_require__ */
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
-eval("var map = {\n\t\"./arrow.svg\": \"./images/arrow.svg\",\n\t\"./logo.svg\": \"./images/logo.svg\",\n\t\"./paper-big.svg\": \"./images/paper-big.svg\",\n\t\"./paper-middle.svg\": \"./images/paper-middle.svg\",\n\t\"./paper-modal.svg\": \"./images/paper-modal.svg\",\n\t\"./paper-small.svg\": \"./images/paper-small.svg\",\n\t\"./rock-big.svg\": \"./images/rock-big.svg\",\n\t\"./rock-middle.svg\": \"./images/rock-middle.svg\",\n\t\"./rock-modal.svg\": \"./images/rock-modal.svg\",\n\t\"./rock-small.svg\": \"./images/rock-small.svg\",\n\t\"./scissors-big.svg\": \"./images/scissors-big.svg\",\n\t\"./scissors-middle.svg\": \"./images/scissors-middle.svg\",\n\t\"./scissors-modal.svg\": \"./images/scissors-modal.svg\",\n\t\"./scissors-small.svg\": \"./images/scissors-small.svg\",\n\t\"./triangle-big.svg\": \"./images/triangle-big.svg\",\n\t\"./triangle-small.svg\": \"./images/triangle-small.svg\",\n\t\"./win-shadow.svg\": \"./images/win-shadow.svg\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./images sync recursive \\\\.(png|jpg|svg|gif)$\";\n\n//# sourceURL=webpack:///./images/_sync_\\.(png%7Cjpg%7Csvg%7Cgif)$?");
+eval("var map = {\n\t\"./arrow.svg\": \"./images/arrow.svg\",\n\t\"./logo.svg\": \"./images/logo.svg\",\n\t\"./modal.svg\": \"./images/modal.svg\",\n\t\"./paper-big.svg\": \"./images/paper-big.svg\",\n\t\"./paper-middle.svg\": \"./images/paper-middle.svg\",\n\t\"./paper-modal.svg\": \"./images/paper-modal.svg\",\n\t\"./paper-small.svg\": \"./images/paper-small.svg\",\n\t\"./rock-big.svg\": \"./images/rock-big.svg\",\n\t\"./rock-middle.svg\": \"./images/rock-middle.svg\",\n\t\"./rock-modal.svg\": \"./images/rock-modal.svg\",\n\t\"./rock-small.svg\": \"./images/rock-small.svg\",\n\t\"./scissors-big.svg\": \"./images/scissors-big.svg\",\n\t\"./scissors-middle.svg\": \"./images/scissors-middle.svg\",\n\t\"./scissors-modal.svg\": \"./images/scissors-modal.svg\",\n\t\"./scissors-small.svg\": \"./images/scissors-small.svg\",\n\t\"./triangle-big.svg\": \"./images/triangle-big.svg\",\n\t\"./triangle-small.svg\": \"./images/triangle-small.svg\",\n\t\"./win-shadow.svg\": \"./images/win-shadow.svg\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./images sync recursive \\\\.(png|jpg|svg|gif)$\";\n\n//# sourceURL=webpack:///./images/_sync_\\.(png%7Cjpg%7Csvg%7Cgif)$?");
 
 /***/ })
 

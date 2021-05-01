@@ -1,0 +1,123 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  opacity: 0;
+  z-index: -1;
+}
+
+.modal {
+  transform: scale(0);
+  transition: 0.3s;
+}
+
+.modal-open {
+  transform: scale(1);
+  transition: 0.3s;
+}
+
+.modal,
+.modal-open {
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 1);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 48px;
+    width: 400px;
+  }
+
+  &__title {
+    color: rgba(59, 66, 98, 1);
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 32px;
+    text-transform: uppercase;
+  }
+
+  &__close,
+  &__close-bottom {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    cursor: pointer;
+  }
+
+  &__close::before,
+  &__close-bottom::before,
+  &__close::after,
+  &__close-bottom::after {
+    content: '';
+    position: absolute;
+    top: calc(50% - 1.5px);
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: rgba(59, 66, 98, 1);
+    transition: 0.3s;
+  }
+
+  &__close::before,
+  &__close-bottom::before {
+    transform: rotate(-45deg);
+  }
+
+  &__close::after,
+  &__close-bottom::after {
+    transform: rotate(45deg);
+  }
+
+  &__close:hover::before,
+  &__close-bottom:hover::before,
+  &__close:hover::after,
+  &__close-bottom:hover::after {
+    background: rgba(219, 46, 77, 1);
+  }
+
+  &__close-bottom {
+    display: none;
+  }
+
+  &__image {
+    display: block;
+  }
+}
+
+@media (max-width: 550px) {
+  .modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    justify-content: space-between;
+    padding-top: 65px;
+    padding-bottom: 45px;
+  }
+
+  .modal__header {
+    justify-content: center;
+    margin-bottom: 0;
+  }
+
+  .modal__close {
+    display: none;
+  }
+
+  .modal__close-bottom {
+    display: block;
+  }
+}
