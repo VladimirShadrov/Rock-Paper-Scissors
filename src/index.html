@@ -21,7 +21,7 @@
           <span class="score__value">12</span>
         </div>
       </header>
-      <div class="step-1">
+      <div class="step-1 hide">
         <div class="step-1__triangle"></div>
         <div class="step-1__item-paper" data-name="paper"></div>
         <div class="step-1__border-1"></div>
@@ -30,8 +30,48 @@
         <div class="step-1__item-rock" data-name="rock"></div>
         <div class="step-1__border-3"></div>
       </div>
-
-      <!--button-->
+      <div class="game">
+        <div class="game__item">
+          <div class="game__item-title">YOU PICKED</div>
+          <div class="game__item-image-container">
+            <div
+              class="game__item-image game__item-image-paper"
+              data-name="user"
+            ></div>
+            <div class="game__item-image-place"></div>
+            <div class="game__win-shadow game__win-shadow-active">
+              <div class="game__win-shadow-middle">
+                <div class="game__win-shadow-small"></div>
+              </div>
+            </div>
+          </div>
+          <div class="game__item-title-bottom">YOU PICKED</div>
+        </div>
+        <div class="game__result">
+          <h1 class="game__result-value">you win</h1>
+          <a href="#" class="game__play-again">PLAY AGAIN</a>
+        </div>
+        <div class="game__item">
+          <div class="game__item-title">THE HOUSE PICKED</div>
+          <div class="game__item-image-container">
+            <div
+              class="game__item-image game__item-image-rock"
+              data-name="user"
+            ></div>
+            <div class="game__item-image-place"></div>
+            <div class="game__win-shadow">
+              <div class="game__win-shadow-middle">
+                <div class="game__win-shadow-small"></div>
+              </div>
+            </div>
+          </div>
+          <div class="game__item-title-bottom">THE HOUSE PICKED</div>
+        </div>
+      </div>
+      <div class="game__result-mobile">
+        <h1 class="game__result-value">you win</h1>
+        <a href="#" class="game__play-again">PLAY AGAIN</a>
+      </div>
       <footer class="footer">
         <a href="#" class="rules">rules</a>
       </footer>

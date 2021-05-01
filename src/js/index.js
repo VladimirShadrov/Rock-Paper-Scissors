@@ -1,8 +1,8 @@
 import '../styles/styles.scss';
 import '../styles/header.scss';
 import '../styles/step-1.scss';
-// import '../styles/step-2.scss';
-// import '../styles/step-3.scss';
+import '../styles/game-field.scss';
+// import '../styles/modal.scss';
 import '../styles/rules.scss';
 
 // Перенос изображений

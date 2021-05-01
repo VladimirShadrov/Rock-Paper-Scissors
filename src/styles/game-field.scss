@@ -1,0 +1,255 @@
+.game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  &__item {
+    width: 100%;
+    max-width: 293px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__item-title {
+    text-align: center;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 1);
+    text-transform: uppercase;
+    margin-bottom: 63px;
+  }
+
+  &__item-title-bottom {
+    text-align: center;
+    font-size: 15px;
+    line-height: 32px;
+    letter-spacing: 1.9px;
+    color: rgba(255, 255, 255, 1);
+    text-transform: uppercase;
+    margin-top: 17px;
+    display: none;
+  }
+
+  &__item-image-container {
+    width: 100%;
+    border-radius: 50%;
+    position: relative;
+  }
+
+  &__item-image-container::before {
+    content: '';
+    display: block;
+    padding-top: 102%;
+  }
+
+  &__item:first-child {
+    margin-right: 77px;
+  }
+
+  &__item:last-child {
+    margin-left: 55px;
+  }
+
+  &__item-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  &__item-image-paper {
+    background: url('../images/paper-big.svg') center / cover no-repeat;
+  }
+
+  &__item-image-rock {
+    background: url('../images/rock-big.svg') center / cover no-repeat;
+  }
+
+  &__item-image-scissors {
+    background: url('../images/scissors-big.svg') center / cover no-repeat;
+  }
+
+  &__item-image-place {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 225px;
+    height: 225px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  &__win-shadow-middle,
+  &__win-shadow-small {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  }
+
+  &__win-shadow {
+    position: absolute;
+    top: -215px;
+    left: -215px;
+    width: 730px;
+    height: 730px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    mix-blend-mode: normal;
+    transform: scale(0);
+    z-index: -1;
+    transition: 0.3s;
+  }
+
+  &__win-shadow-active {
+    transform: scale(1);
+    transition: 0.3s;
+  }
+
+  &__win-shadow-middle {
+    width: 564px;
+    height: 564px;
+    background: rgba(255, 255, 255, 0.05);
+    mix-blend-mode: normal;
+  }
+
+  &__win-shadow-small {
+    width: 424px;
+    height: 424px;
+    background: rgba(255, 255, 255, 0.05);
+    mix-blend-mode: normal;
+  }
+
+  &__result,
+  &__result-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__result-mobile {
+    display: none;
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+
+  &__result-value {
+    font-size: 56px;
+    line-height: 67px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 1);
+    margin-bottom: 16px;
+  }
+
+  &__play-again {
+    display: block;
+    width: 220px;
+    height: 48px;
+    border-radius: 8px;
+    background: linear-gradient(0deg, #f3f3f3 0%, #ffffff 100%);
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.196706);
+    color: rgba(59, 66, 98, 1);
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 46px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    transition: 0.3s;
+
+    &:hover {
+      color: rgba(219, 46, 77, 1);
+      transition: 0.3s;
+    }
+  }
+}
+
+@media (max-width: 950px) {
+  .game__result {
+    display: none;
+  }
+
+  .game__result-mobile {
+    display: flex;
+  }
+}
+
+@media (max-width: 750px) {
+  .game__item-title {
+    display: none;
+  }
+
+  .game__item-title-bottom {
+    display: block;
+  }
+
+  .game__item {
+    max-width: 145px;
+    min-height: 182px;
+  }
+
+  .game__item:first-child {
+    margin-right: 25px;
+  }
+
+  .game__item:last-child {
+    margin-left: 25px;
+  }
+
+  .game__item-image-place {
+    width: 110px;
+    height: 110px;
+  }
+
+  .game__win-shadow {
+    top: -71.5px;
+    left: -71.5px;
+    width: 288px;
+    height: 288px;
+  }
+
+  .game__win-shadow-middle {
+    width: 233px;
+    height: 233px;
+  }
+
+  .game__win-shadow-small {
+    width: 187px;
+    height: 187px;
+  }
+}
+
+@media (max-width: 390px) {
+  .game__item-title-bottom {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .game__item {
+    max-width: 127px;
+    min-height: 162px;
+  }
+
+  .game__item:first-child {
+    margin-right: 10px;
+  }
+
+  .game__item:last-child {
+    margin-left: 10px;
+  }
+
+  .game__win-shadow {
+    top: -81.5px;
+    left: -81.5px;
+  }
+}

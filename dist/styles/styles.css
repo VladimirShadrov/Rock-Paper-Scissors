@@ -297,6 +297,224 @@ body {
     bottom: -8px;
     left: calc(50% - 70px); } }
 
+.game {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%; }
+  .game__item {
+    width: 100%;
+    max-width: 293px;
+    min-height: 300px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  .game__item-title {
+    text-align: center;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 3px;
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 63px; }
+  .game__item-title-bottom {
+    text-align: center;
+    font-size: 15px;
+    line-height: 32px;
+    letter-spacing: 1.9px;
+    color: white;
+    text-transform: uppercase;
+    margin-top: 17px;
+    display: none; }
+  .game__item-image-container {
+    width: 100%;
+    border-radius: 50%;
+    position: relative; }
+  .game__item-image-container::before {
+    content: '';
+    display: block;
+    padding-top: 102%; }
+  .game__item:first-child {
+    margin-right: 77px; }
+  .game__item:last-child {
+    margin-left: 55px; }
+  .game__item-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1; }
+  .game__item-image-paper {
+    background: url("../images/paper-big.svg") center/cover no-repeat; }
+  .game__item-image-rock {
+    background: url("../images/rock-big.svg") center/cover no-repeat; }
+  .game__item-image-scissors {
+    background: url("../images/scissors-big.svg") center/cover no-repeat; }
+  .game__item-image-place {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    width: 225px;
+    height: 225px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.1); }
+  .game__win-shadow-middle, .game__win-shadow-small {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    border-radius: 50%; }
+  .game__win-shadow {
+    position: absolute;
+    top: -215px;
+    left: -215px;
+    width: 730px;
+    height: 730px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    mix-blend-mode: normal;
+    -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+            transform: scale(0);
+    z-index: -1;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s; }
+  .game__win-shadow-active {
+    -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s; }
+  .game__win-shadow-middle {
+    width: 564px;
+    height: 564px;
+    background: rgba(255, 255, 255, 0.05);
+    mix-blend-mode: normal; }
+  .game__win-shadow-small {
+    width: 424px;
+    height: 424px;
+    background: rgba(255, 255, 255, 0.05);
+    mix-blend-mode: normal; }
+  .game__result, .game__result-mobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  .game__result-mobile {
+    display: none;
+    margin-top: 50px;
+    margin-bottom: 20px; }
+  .game__result-value {
+    font-size: 56px;
+    line-height: 67px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 16px; }
+  .game__play-again {
+    display: block;
+    width: 220px;
+    height: 48px;
+    border-radius: 8px;
+    background: -webkit-gradient(linear, left bottom, left top, from(#f3f3f3), to(#ffffff));
+    background: -o-linear-gradient(bottom, #f3f3f3 0%, #ffffff 100%);
+    background: linear-gradient(0deg, #f3f3f3 0%, #ffffff 100%);
+    -webkit-box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.196706);
+            box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.196706);
+    color: #3b4262;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 46px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s; }
+    .game__play-again:hover {
+      color: #db2e4d;
+      -webkit-transition: 0.3s;
+      -o-transition: 0.3s;
+      transition: 0.3s; }
+
+@media (max-width: 950px) {
+  .game__result {
+    display: none; }
+  .game__result-mobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; } }
+
+@media (max-width: 750px) {
+  .game__item-title {
+    display: none; }
+  .game__item-title-bottom {
+    display: block; }
+  .game__item {
+    max-width: 145px;
+    min-height: 182px; }
+  .game__item:first-child {
+    margin-right: 25px; }
+  .game__item:last-child {
+    margin-left: 25px; }
+  .game__item-image-place {
+    width: 110px;
+    height: 110px; }
+  .game__win-shadow {
+    top: -71.5px;
+    left: -71.5px;
+    width: 288px;
+    height: 288px; }
+  .game__win-shadow-middle {
+    width: 233px;
+    height: 233px; }
+  .game__win-shadow-small {
+    width: 187px;
+    height: 187px; } }
+
+@media (max-width: 390px) {
+  .game__item-title-bottom {
+    font-size: 12px;
+    letter-spacing: 1px; }
+  .game__item {
+    max-width: 127px;
+    min-height: 162px; }
+  .game__item:first-child {
+    margin-right: 10px; }
+  .game__item:last-child {
+    margin-left: 10px; }
+  .game__win-shadow {
+    top: -81.5px;
+    left: -81.5px; } }
+
 .footer {
   margin-top: auto;
   width: 100%;
