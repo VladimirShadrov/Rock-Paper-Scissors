@@ -35,6 +35,25 @@ eval("\n\n__webpack_require__(/*! core-js/es6 */ \"../node_modules/core-js/es6/i
 
 /***/ }),
 
+/***/ "./js/helpers.js":
+/*!***********************!*\
+  !*** ./js/helpers.js ***!
+  \***********************/
+/*! namespace exports */
+/*! export closeModal [provided] [no usage info] [missing usage info prevents renaming] */
+/*! export createModal [provided] [no usage info] [missing usage info prevents renaming] */
+/*! export getDomItem [provided] [no usage info] [missing usage info prevents renaming] */
+/*! export getDomItemsArray [provided] [no usage info] [missing usage info prevents renaming] */
+/*! export openModal [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getDomItem\": function() { return /* binding */ getDomItem; },\n/* harmony export */   \"getDomItemsArray\": function() { return /* binding */ getDomItemsArray; },\n/* harmony export */   \"createModal\": function() { return /* binding */ createModal; },\n/* harmony export */   \"openModal\": function() { return /* binding */ openModal; },\n/* harmony export */   \"closeModal\": function() { return /* binding */ closeModal; }\n/* harmony export */ });\nfunction getDomItem(selector) {\n  var item = document.querySelector(selector);\n  return item;\n}\nfunction getDomItemsArray(selector) {\n  var item = document.querySelectorAll(selector);\n  return item;\n}\nfunction createModal(container) {\n  var html = \"\\n  <div class=\\\"modal\\\">\\n    <div class=\\\"modal__header\\\">\\n      <h1 class=\\\"modal__title\\\">rules</h1>\\n      <div class=\\\"modal__close\\\" data-name=\\\"close\\\"></div>\\n    </div>\\n    <img src=\\\"./images/modal.svg\\\" alt=\\\"modal\\\" class=\\\"modal__image\\\" />\\n    <div class=\\\"modal__close-bottom\\\" data-name=\\\"close\\\"></div>\\n    </div>\\n  </div>\\n  \";\n  container.innerHTML = '';\n  container.insertAdjacentHTML('afterbegin', html);\n}\nfunction openModal(selector, overlay) {\n  var modal = getDomItem(selector);\n  overlay.style.zIndex = '1';\n  overlay.style.opacity = '1';\n  setTimeout(function () {\n    modal.classList.add('modal-open');\n  }, 100);\n}\nfunction closeModal(selector, overlay) {\n  var modal = getDomItem(selector);\n  modal.classList.remove('modal-open');\n  overlay.style.zIndex = '-1';\n  overlay.style.opacity = '0';\n  setTimeout(function () {\n    overlay.innerHTML = '';\n  }, 500);\n}\n\n//# sourceURL=webpack:///./js/helpers.js?");
+
+/***/ }),
+
 /***/ "./js/index.js":
 /*!*********************!*\
   !*** ./js/index.js ***!
@@ -45,7 +64,7 @@ eval("\n\n__webpack_require__(/*! core-js/es6 */ \"../node_modules/core-js/es6/i
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_styles_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/styles.scss */ \"./styles/styles.scss\");\n/* harmony import */ var _styles_header_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles/header.scss */ \"./styles/header.scss\");\n/* harmony import */ var _styles_step_1_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styles/step-1.scss */ \"./styles/step-1.scss\");\n/* harmony import */ var _styles_game_field_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../styles/game-field.scss */ \"./styles/game-field.scss\");\n/* harmony import */ var _styles_modal_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../styles/modal.scss */ \"./styles/modal.scss\");\n/* harmony import */ var _styles_rules_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../styles/rules.scss */ \"./styles/rules.scss\");\n\n\n\n\n\n // Перенос изображений\n\n__webpack_require__(\"./images sync recursive \\\\.(png|jpg|svg|gif)$\");\n\n//# sourceURL=webpack:///./js/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_styles_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/styles.scss */ \"./styles/styles.scss\");\n/* harmony import */ var _styles_header_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles/header.scss */ \"./styles/header.scss\");\n/* harmony import */ var _styles_step_1_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styles/step-1.scss */ \"./styles/step-1.scss\");\n/* harmony import */ var _styles_game_field_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../styles/game-field.scss */ \"./styles/game-field.scss\");\n/* harmony import */ var _styles_modal_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../styles/modal.scss */ \"./styles/modal.scss\");\n/* harmony import */ var _styles_rules_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../styles/rules.scss */ \"./styles/rules.scss\");\n/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./helpers */ \"./js/helpers.js\");\n\n\n\n\n\n\n\n\n\n\n // Перенос изображений\n\n__webpack_require__(\"./images sync recursive \\\\.(png|jpg|svg|gif)$\");\n\nvar game = (0,_helpers__WEBPACK_IMPORTED_MODULE_6__.getDomItem)('.container');\nvar overlay = (0,_helpers__WEBPACK_IMPORTED_MODULE_6__.getDomItem)('.overlay');\ngame.addEventListener('click', function (event) {\n  if (event.target.tagName.toLowerCase() === 'a') {\n    event.preventDefault();\n  }\n});\ngame.addEventListener('mousedown', function (event) {\n  if (event.target.classList.contains('rules')) {\n    (0,_helpers__WEBPACK_IMPORTED_MODULE_6__.createModal)(overlay);\n    (0,_helpers__WEBPACK_IMPORTED_MODULE_6__.openModal)('.modal', overlay);\n  }\n\n  if (event.target.dataset.name === 'close' || event.target.classList.contains('overlay')) {\n    (0,_helpers__WEBPACK_IMPORTED_MODULE_6__.closeModal)('.modal', overlay);\n  }\n});\n\n//# sourceURL=webpack:///./js/index.js?");
 
 /***/ }),
 
@@ -4358,6 +4377,18 @@ eval("var map = {\n\t\"./arrow.svg\": \"./images/arrow.svg\",\n\t\"./logo.svg\":
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	!function() {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = function(exports, definition) {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	}();
+/******/ 	
 /******/ 	/* webpack/runtime/global */
 /******/ 	!function() {
 /******/ 		__webpack_require__.g = (function() {
