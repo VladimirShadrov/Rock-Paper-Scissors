@@ -1,4 +1,4 @@
-##Rock-Paper-Scissors
+## Rock-Paper-Scissors
 
 Приложение Камень - Ножницы - Бумага.
 
