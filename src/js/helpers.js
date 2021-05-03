@@ -107,54 +107,26 @@ export function showResult(gameFields, result, resultMobile, scoreField) {
   }
 
   if (userResult === 'paper' && computerResult === 'rock') {
-    // result.firstElementChild.textContent = 'you win';
-    // resultMobile.firstElementChild.textContent = 'you win';
-    // showWinner(user);
-    // increaseScore();
-    // showScore(scoreField);
-
     playerWin(result, resultMobile, user, scoreField);
   }
 
   if (userResult === 'paper' && computerResult === 'scissors') {
-    // result.firstElementChild.textContent = 'you lose';
-    // resultMobile.firstElementChild.textContent = 'you lose';
-    // showWinner(computer);
-
     computerWin(result, resultMobile, computer);
   }
 
   if (userResult === 'scissors' && computerResult === 'paper') {
-    // result.firstElementChild.textContent = 'you win';
-    // resultMobile.firstElementChild.textContent = 'you win';
-    // showWinner(user);
-
     playerWin(result, resultMobile, user, scoreField);
   }
 
   if (userResult === 'scissors' && computerResult === 'rock') {
-    // result.firstElementChild.textContent = 'you lose';
-    // resultMobile.firstElementChild.textContent = 'you lose';
-    // showWinner(computer);
-
     computerWin(result, resultMobile, computer);
   }
 
   if (userResult === 'rock' && computerResult === 'scissors') {
-    // result.firstElementChild.textContent = 'you win';
-    // resultMobile.firstElementChild.textContent = 'you win';
-    // showWinner(user);
-    // increaseScore();
-    // showScore(scoreField);
-
     playerWin(result, resultMobile, user, scoreField);
   }
 
   if (userResult === 'rock' && computerResult === 'paper') {
-    // result.firstElementChild.textContent = 'you lose';
-    // resultMobile.firstElementChild.textContent = 'you lose';
-    // showWinner(computer);
-
     computerWin(result, resultMobile, computer);
   }
 }

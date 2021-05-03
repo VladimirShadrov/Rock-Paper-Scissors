@@ -28,15 +28,18 @@ const resultMobile = getDomItem('.game__result-mobile');
 const shadows = getDomItemsArray('.game__win-shadow');
 const score = getDomItem('.score__value');
 
+// Передача данных о счете в localeStorage
 if (!localStorage.getItem('score')) {
   localStorage.setItem('score', 0);
 }
 
+// Отмена дефолтного поведения ссылок
 game.addEventListener('click', (event) => {
   if (event.target.tagName.toLowerCase() === 'a') {
     event.preventDefault();
   }
 
+  // Старт игры
   if (event.target.dataset.name === 'option') {
     showPlayerSelection(event, firstScreen, gameScreen, gameFields);
 
@@ -46,6 +49,7 @@ game.addEventListener('click', (event) => {
     }, 500);
   }
 
+  // Старт новой игры
   if (event.target.dataset.name === 'new game') {
     startNewGame(
       shadows,
@@ -59,11 +63,13 @@ game.addEventListener('click', (event) => {
 });
 
 game.addEventListener('mousedown', (event) => {
+  // Открыть модальное окно с правилами игры
   if (event.target.classList.contains('rules')) {
     createModal(overlay);
     openModal('.modal', overlay);
   }
 
+  // Закрыть модальное окно с правилами игры
   if (
     event.target.dataset.name === 'close' ||
     event.target.classList.contains('overlay')
@@ -72,4 +78,5 @@ game.addEventListener('mousedown', (event) => {
   }
 });
 
+// Отобразить текущее значение счета
 showScore(score);
