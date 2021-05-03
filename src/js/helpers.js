@@ -90,7 +90,7 @@ function selectOption(id, playerField) {
   }
 }
 
-export function showResult(gameFields, result, resultMobile) {
+export function showResult(gameFields, result, resultMobile, scoreField) {
   const user = gameFields.find((field) => field.dataset.name === 'user');
   const computer = gameFields.find(
     (field) => field.dataset.name === 'computer'
@@ -107,40 +107,70 @@ export function showResult(gameFields, result, resultMobile) {
   }
 
   if (userResult === 'paper' && computerResult === 'rock') {
-    result.firstElementChild.textContent = 'you win';
-    resultMobile.firstElementChild.textContent = 'you win';
-    showWinner(user);
+    // result.firstElementChild.textContent = 'you win';
+    // resultMobile.firstElementChild.textContent = 'you win';
+    // showWinner(user);
+    // increaseScore();
+    // showScore(scoreField);
+
+    playerWin(result, resultMobile, user, scoreField);
   }
 
   if (userResult === 'paper' && computerResult === 'scissors') {
-    result.firstElementChild.textContent = 'you lose';
-    resultMobile.firstElementChild.textContent = 'you lose';
-    showWinner(computer);
+    // result.firstElementChild.textContent = 'you lose';
+    // resultMobile.firstElementChild.textContent = 'you lose';
+    // showWinner(computer);
+
+    computerWin(result, resultMobile, computer);
   }
 
   if (userResult === 'scissors' && computerResult === 'paper') {
-    result.firstElementChild.textContent = 'you win';
-    resultMobile.firstElementChild.textContent = 'you win';
-    showWinner(user);
+    // result.firstElementChild.textContent = 'you win';
+    // resultMobile.firstElementChild.textContent = 'you win';
+    // showWinner(user);
+
+    playerWin(result, resultMobile, user, scoreField);
   }
 
   if (userResult === 'scissors' && computerResult === 'rock') {
-    result.firstElementChild.textContent = 'you lose';
-    resultMobile.firstElementChild.textContent = 'you lose';
-    showWinner(computer);
+    // result.firstElementChild.textContent = 'you lose';
+    // resultMobile.firstElementChild.textContent = 'you lose';
+    // showWinner(computer);
+
+    computerWin(result, resultMobile, computer);
   }
 
   if (userResult === 'rock' && computerResult === 'scissors') {
-    result.firstElementChild.textContent = 'you win';
-    resultMobile.firstElementChild.textContent = 'you win';
-    showWinner(user);
+    // result.firstElementChild.textContent = 'you win';
+    // resultMobile.firstElementChild.textContent = 'you win';
+    // showWinner(user);
+    // increaseScore();
+    // showScore(scoreField);
+
+    playerWin(result, resultMobile, user, scoreField);
   }
 
   if (userResult === 'rock' && computerResult === 'paper') {
-    result.firstElementChild.textContent = 'you lose';
-    resultMobile.firstElementChild.textContent = 'you lose';
-    showWinner(computer);
+    // result.firstElementChild.textContent = 'you lose';
+    // resultMobile.firstElementChild.textContent = 'you lose';
+    // showWinner(computer);
+
+    computerWin(result, resultMobile, computer);
   }
+}
+
+function playerWin(result, resultMobile, player, scoreField) {
+  result.firstElementChild.textContent = 'you win';
+  resultMobile.firstElementChild.textContent = 'you win';
+  showWinner(player);
+  increaseScore();
+  showScore(scoreField);
+}
+
+function computerWin(result, resultMobile, player) {
+  result.firstElementChild.textContent = 'you lose';
+  resultMobile.firstElementChild.textContent = 'you lose';
+  showWinner(player);
 }
 
 function showWinner(player) {
@@ -166,4 +196,25 @@ export function startNewGame(
     result.classList.add('hide');
     resultMobile.classList.add('hide');
   }, 300);
+}
+
+function getScoreValue() {
+  const score = +localStorage.getItem('score');
+
+  return score;
+}
+
+function increaseScore() {
+  let score = getScoreValue();
+  score++;
+
+  if (score === 999) {
+    score = 0;
+  }
+  localStorage.setItem('score', score);
+}
+
+export function showScore(scoreField) {
+  const score = getScoreValue();
+  scoreField.innerHTML = score;
 }

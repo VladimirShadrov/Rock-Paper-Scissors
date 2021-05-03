@@ -13,6 +13,7 @@ import { showPlayerSelection } from './helpers';
 import { showComputerSelection } from './helpers';
 import { showResult } from './helpers';
 import { startNewGame } from './helpers';
+import { showScore } from './helpers';
 
 // Перенос изображений
 require.context('../images', true, /\.(png|jpg|svg|gif)$/);
@@ -25,6 +26,11 @@ const gameFields = getDomItemsArray('.game__item-image');
 const result = getDomItem('.game__result');
 const resultMobile = getDomItem('.game__result-mobile');
 const shadows = getDomItemsArray('.game__win-shadow');
+const score = getDomItem('.score__value');
+
+if (!localStorage.getItem('score')) {
+  localStorage.setItem('score', 0);
+}
 
 game.addEventListener('click', (event) => {
   if (event.target.tagName.toLowerCase() === 'a') {
@@ -36,7 +42,7 @@ game.addEventListener('click', (event) => {
 
     setTimeout(() => {
       showComputerSelection(gameFields);
-      showResult(gameFields, result, resultMobile);
+      showResult(gameFields, result, resultMobile, score);
     }, 500);
   }
 
@@ -65,3 +71,5 @@ game.addEventListener('mousedown', (event) => {
     closeModal('.modal', overlay);
   }
 });
+
+showScore(score);
