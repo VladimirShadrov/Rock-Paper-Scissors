@@ -37,7 +37,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 48px;
-    width: 400px;
+    width: 336px;
   }
 
   &__title {
@@ -93,6 +93,9 @@
 
   &__image {
     display: block;
+    width: 305px;
+    height: 271px;
+    background: url('../images/modal.svg') center / cover no-repeat;
   }
 }
 

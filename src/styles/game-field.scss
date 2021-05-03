@@ -174,10 +174,6 @@
   }
 }
 
-.hide {
-  display: none;
-}
-
 @media (max-width: 950px) {
   .game__result {
     display: none;
@@ -256,4 +252,8 @@
     top: -81.5px;
     left: -81.5px;
   }
+}
+
+.hide {
+  display: none;
 }

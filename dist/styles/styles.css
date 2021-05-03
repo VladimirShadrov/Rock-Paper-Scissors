@@ -462,9 +462,6 @@ body {
       -o-transition: 0.3s;
       transition: 0.3s; }
 
-.hide {
-  display: none; }
-
 @media (max-width: 950px) {
   .game__result {
     display: none; }
@@ -514,6 +511,9 @@ body {
   .game__win-shadow {
     top: -81.5px;
     left: -81.5px; } }
+
+.hide {
+  display: none; }
 
 .overlay {
   position: fixed;
@@ -580,7 +580,7 @@ body {
         -ms-flex-align: center;
             align-items: center;
     margin-bottom: 48px;
-    width: 400px; }
+    width: 336px; }
   .modal__title,
   .modal-open__title {
     color: #3b4262;
@@ -633,7 +633,10 @@ body {
     display: none; }
   .modal__image,
   .modal-open__image {
-    display: block; }
+    display: block;
+    width: 305px;
+    height: 271px;
+    background: url("../images/modal.svg") center/cover no-repeat; }
 
 @media (max-width: 550px) {
   .modal {
