@@ -73,7 +73,8 @@ body {
   font-weight: 700;
   background: -o-radial-gradient(50% 0%, 134.34% 134.34%, #1f3757 0%, #131537 100%);
   background: radial-gradient(134.34% 134.34% at 50% 0%, #1f3757 0%, #131537 100%);
-  padding: 48px 32px 32px 32px; }
+  padding: 48px 32px 32px 32px;
+  overflow-x: hidden; }
 
 .container {
   max-width: 1300px;
